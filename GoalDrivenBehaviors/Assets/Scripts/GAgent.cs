@@ -38,6 +38,24 @@ public class GAgent : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+       
         
+        if (planner == null || actionQueue == null)
+        {
+            planner = new GPlanner();
+
+            var sortedGoals = from entry in goals orderby entry.Value descending select entry;
+
+            foreach(KeyValuePair<SubGoal, int> sg in sortedGoals)
+            {
+                actionQueue = planner.plan(actions, sg.Key.sgoals, null);
+                if(actionQueue != null)
+                {
+                    currentGoal = sg.Key;
+                    break;
+                }
+            }
+        }
+
     }
 }
