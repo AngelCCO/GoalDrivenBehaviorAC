@@ -1,33 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.UI;
-
-public sealed class GWorld
-{
+﻿public sealed class GWorld {
 
     private static readonly GWorld instance = new GWorld();
     private static WorldStates world;
-    public GameObject target;
 
-    static GWorld()
-    {
+    static GWorld() {
+
         world = new WorldStates();
     }
 
-    private GWorld()
-    {
+    private GWorld() {
 
     }
 
-    public static GWorld Instance
-    {
+    public static GWorld Instance {
+
         get { return instance; }
     }
 
-    public WorldStates GetWorld()
-    {
+    public WorldStates GetWorld() {
+
         return world;
     }
 }
