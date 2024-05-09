@@ -1,4 +1,4 @@
-﻿public class Register : GAction 
+﻿public class GetPatient : GAction 
 {
     public override bool PrePerform() 
     {
